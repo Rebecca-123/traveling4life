@@ -4,13 +4,14 @@ services:
     image: java_springv1
     build: .
     ports:
-      - "8085:8085"
+      - "8091:8091"
     volumes:
       - persistent_volume:/app/volumes
+    restart: unless-stopped 
 volumes:
   persistent_volume:
     driver: local
     driver_opts:
       o: bind
       type: none
-      device: /home/ubuntu/spring_portfolio/volumes
+      device: /home/ubuntu/t1_juiceVRLD/volumes
