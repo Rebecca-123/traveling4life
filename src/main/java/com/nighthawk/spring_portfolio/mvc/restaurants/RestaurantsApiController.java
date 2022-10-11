@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController // annotation to simplify the creation of RESTful web services
-@RequestMapping("/api/jokes")  // all requests in file begin with this URI
+@RequestMapping("/api/restaurants")  // all requests in file begin with this URI
 public class RestaurantsApiController {
 
     // Autowired enables Control to connect URI request and POJO Object to easily for Database CRUD operations
