@@ -25,6 +25,11 @@ public class RestaurantsInit {
                 "Wendy's",
                 "Burger King",
                 "Jack in the Box",
+                "Burger Lounge",
+                "Carl's Jr.",
+                "McDonald's",
+                "Taco Bell",
+                "Shake Shack",
                 "Burger Lounge"
             };
 

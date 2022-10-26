@@ -39,7 +39,7 @@ public class RestaurantsApiController {
         Optional<Restaurants> optional = repository.findById(id);
         if (optional.isPresent()) {  // Good ID
             Restaurants restaurant = optional.get();  // value from findByID
-            restaurant.setDelicious(restaurant.getDelicious()+1); // increment value
+            restaurant.setFive(restaurant.getFive()+1); // increment value
             repository.save(restaurant);  // save entity
             return new ResponseEntity<>(restaurant, HttpStatus.OK);  // OK HTTP response: status code, headers, and body
         }
@@ -54,7 +54,7 @@ public class RestaurantsApiController {
         Optional<Restaurants> optional = repository.findById(id);
         if (optional.isPresent()) {  // Good ID
             Restaurants restaurant = optional.get();
-            restaurant.setInedible(restaurant.getInedible()+1);
+            restaurant.setOne(restaurant.getOne()+1);
             repository.save(restaurant);
             return new ResponseEntity<>(restaurant, HttpStatus.OK);
         }

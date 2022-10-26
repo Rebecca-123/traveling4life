@@ -11,21 +11,21 @@ public class Restaurants {
     @Column(unique=true)
     private String restr;
 
-    private int delicious;
-    private int inedible;
+    private int five;
+    private int one;
 
     public Restaurants(){
         this.id = (long)1;
         this.restr = "In-N-Out";
-        this.delicious = 0;
-        this.inedible = 0;
+        this.five = 0;
+        this.one = 0;
     }
 
-    public Restaurants(Long id, String restr, int delicious, int inedible){
+    public Restaurants(Long id, String restr, int five, int one){
         this.id = id;
         this.restr = restr;
-        this.delicious = delicious;
-        this.inedible = inedible;
+        this.five = five;
+        this.one = one;
     }
 
     public Long getId(){
@@ -36,12 +36,12 @@ public class Restaurants {
         return restr;
     }
 
-    public int getDelicious(){
-        return delicious;
+    public int getFive(){
+        return five;
     }
 
-    public int getInedible(){
-        return inedible;
+    public int getOne(){
+        return one;
     }
 
     public void setId(Long id){
@@ -52,11 +52,11 @@ public class Restaurants {
         this.restr = restr;
     }
 
-    public void setDelicious(int delicious){
-        this.delicious = delicious;
+    public void setFive(int five){
+        this.five = five;
     }
 
-    public void setInedible(int inedible){
-        this.inedible = inedible;
+    public void setOne(int one){
+        this.one = one;
     }
 }

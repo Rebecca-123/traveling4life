@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<!-- Signals to the Layout Dialect which layout should be used to decorate this View -->
+<html xmlns:layout="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{layout}" lang="en">
+
+<!-- <head> -->
+<div layout:fragment="head" th:remove="tag">
+    <!-- Page specific head additions -->
+    <title>Hollywood Weather Forecast</title>
+</div>
+
+<!-- <body> -->
+<div layout:fragment="body" th:remove="tag">
+    <!-- Page specific body additions -->
+    <div class="container">
+
+        <div class="row justify-content-md-center">
+            <h1><strong>Hollywood Weather Forecast</strong></h1>
+            <form th:action="@{/starters/weather/}" method="GET" id="weatherForm">
+                <button>Refresh!</button>
+            </form>
+        </div>
+
+        <table class="table">
+            <tr>
+                <th>Timezone</th>
+            </tr>
+            <tr>
+                 <!-- Usage of Java HashMap and Thymeleaf -->
+                <td th:text="${map.timezone}"></td>
+            </tr>
+        </table>
+
+        <table class="table">
+            <tr>
+                <th>Time</th>
+                <th>Temperature</th>
+                <th>Description</th>
+                <th>Precipitation</th>
+                <th>Snow</th>
+                <th>UV</th>
+            </tr>
+            <!-- Usage of JSON object and Thymeleaf -->
+            <tr th:each="country : ${map.data}">
+                <!--/*@thymesVar id="country_name" type="java"*/-->
+                <td th:text="${country.datetime}"></td>
+                <td th:text="${country.temp}"></td>
+                <td th:text="${country.weather.description}"></td>
+                <td th:text="${country.snow}"></td>
+                <td th:text="${country.precip}"></td>
+                <td th:text="${country.uv}"></td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+</html>
