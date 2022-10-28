@@ -19,5 +19,8 @@ public class Restaurants {
     private String restr;
 
     private int five;
+    private int four;
+    private int three;
+    private int two;
     private int one;
 }

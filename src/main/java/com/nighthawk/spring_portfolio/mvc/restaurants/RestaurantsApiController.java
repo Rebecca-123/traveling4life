@@ -29,7 +29,7 @@ public class RestaurantsApiController {
      * @PutMapping annotation is used for mapping HTTP PUT requests onto specific handler methods.
      * @PathVariable annotation extracts the templated part {id}, from the URI
      */
-    @PutMapping("/like/{id}")
+    @PutMapping("/five/{id}")
     public ResponseEntity<Restaurants> setLike(@PathVariable long id) {
         /* 
         * Optional (below) is a container object which helps determine if a result is present. 
@@ -47,9 +47,63 @@ public class RestaurantsApiController {
         return new ResponseEntity<>(HttpStatus.BAD_REQUEST);  // Failed HTTP response: status code, headers, and body
     }
 
+    @PutMapping("/four/{id}")
+    public ResponseEntity<Restaurants> setFour(@PathVariable long id) {
+        /* 
+        * Optional (below) is a container object which helps determine if a result is present. 
+        * If a value is present, isPresent() will return true
+        * get() will return the value.
+        */
+        Optional<Restaurants> optional = repository.findById(id);
+        if (optional.isPresent()) {  // Good ID
+            Restaurants restaurant = optional.get();  // value from findByID
+            restaurant.setFour(restaurant.getFour()+1); // increment value
+            repository.save(restaurant);  // save entity
+            return new ResponseEntity<>(restaurant, HttpStatus.OK);  // OK HTTP response: status code, headers, and body
+        }
+        // Bad ID
+        return new ResponseEntity<>(HttpStatus.BAD_REQUEST);  // Failed HTTP response: status code, headers, and body
+    }
+
+    @PutMapping("/three/{id}")
+    public ResponseEntity<Restaurants> setThree(@PathVariable long id) {
+        /* 
+        * Optional (below) is a container object which helps determine if a result is present. 
+        * If a value is present, isPresent() will return true
+        * get() will return the value.
+        */
+        Optional<Restaurants> optional = repository.findById(id);
+        if (optional.isPresent()) {  // Good ID
+            Restaurants restaurant = optional.get();  // value from findByID
+            restaurant.setThree(restaurant.getThree()+1); // increment value
+            repository.save(restaurant);  // save entity
+            return new ResponseEntity<>(restaurant, HttpStatus.OK);  // OK HTTP response: status code, headers, and body
+        }
+        // Bad ID
+        return new ResponseEntity<>(HttpStatus.BAD_REQUEST);  // Failed HTTP response: status code, headers, and body
+    }
+
+    @PutMapping("/two/{id}")
+    public ResponseEntity<Restaurants> setTwo(@PathVariable long id) {
+        /* 
+        * Optional (below) is a container object which helps determine if a result is present. 
+        * If a value is present, isPresent() will return true
+        * get() will return the value.
+        */
+        Optional<Restaurants> optional = repository.findById(id);
+        if (optional.isPresent()) {  // Good ID
+            Restaurants restaurant = optional.get();  // value from findByID
+            restaurant.setTwo(restaurant.getTwo()+1); // increment value
+            repository.save(restaurant);  // save entity
+            return new ResponseEntity<>(restaurant, HttpStatus.OK);  // OK HTTP response: status code, headers, and body
+        }
+        // Bad ID
+        return new ResponseEntity<>(HttpStatus.BAD_REQUEST);  // Failed HTTP response: status code, headers, and body
+    }
+
     /* Update Jeer
      */
-    @PutMapping("/jeer/{id}")
+    @PutMapping("/one/{id}")
     public ResponseEntity<Restaurants> setJeer(@PathVariable long id) {
         Optional<Restaurants> optional = repository.findById(id);
         if (optional.isPresent()) {  // Good ID
