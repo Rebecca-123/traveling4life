@@ -48,7 +48,7 @@ public class RestaurantsApiController {
     }
 
     @PutMapping("/four/{id}")
-    public ResponseEntity<Restaurants> setFour(@PathVariable long id) {
+    public ResponseEntity<Restaurants> setGood(@PathVariable long id) {
         /* 
         * Optional (below) is a container object which helps determine if a result is present. 
         * If a value is present, isPresent() will return true
@@ -66,7 +66,7 @@ public class RestaurantsApiController {
     }
 
     @PutMapping("/three/{id}")
-    public ResponseEntity<Restaurants> setThree(@PathVariable long id) {
+    public ResponseEntity<Restaurants> setMid(@PathVariable long id) {
         /* 
         * Optional (below) is a container object which helps determine if a result is present. 
         * If a value is present, isPresent() will return true
@@ -84,7 +84,7 @@ public class RestaurantsApiController {
     }
 
     @PutMapping("/two/{id}")
-    public ResponseEntity<Restaurants> setTwo(@PathVariable long id) {
+    public ResponseEntity<Restaurants> setBad(@PathVariable long id) {
         /* 
         * Optional (below) is a container object which helps determine if a result is present. 
         * If a value is present, isPresent() will return true
