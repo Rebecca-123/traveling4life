@@ -37,6 +37,7 @@ public class RestaurantsInit {
             for (String res : restaurantsArray) {
                 List<Restaurants> test = repository.findByRestrIgnoreCase(res);  // JPA lookup
                 if (test.size() == 0)
+                    // default values
                     repository.save(new Restaurants(null, res, 0, 0, 0, 0, 0)); // JPA save
             }
             

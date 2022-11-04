@@ -24,6 +24,7 @@ public class RestaurantsApiController {
         // ResponseEntity returns List of Jokes provide by JPA findAll()
         return new ResponseEntity<>(repository.findAll(), HttpStatus.OK);
     }
+    // one function for updating each rating (5-1)
 
     /* Update Like
      * @PutMapping annotation is used for mapping HTTP PUT requests onto specific handler methods.

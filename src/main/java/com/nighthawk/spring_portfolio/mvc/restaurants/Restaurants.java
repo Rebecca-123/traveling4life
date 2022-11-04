@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 @Data
+// automatically create constructors
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity // Annotation to simplify creating an entity, which is a lightweight persistence domain object. Typically, an entity represents a table in a relational database, and each entity instance corresponds to a row in that table.
@@ -18,6 +19,7 @@ public class Restaurants {
     @Column(unique=true)
     private String restr;
 
+    // integers representing ratings for each 5-1
     private int five;
     private int four;
     private int three;
